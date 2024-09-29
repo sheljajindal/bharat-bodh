@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Success Page</title>
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="../static/img/logo.png" alt="Conference Logo" class="sitename-logo" />
+</div>
+
+<!-- Main Container -->
+<div class="container">
+  <div class="form">
+    <header>Submission Status</header>
+    
+    <p>IBBPS000{{user_id}} {{tit}} {{first}} {{last}} Your submission has been received!</p>
+    <a href="/">Go back to the home page</a>
+  </div>
+</div>
+
+<style>
+/* Add some basic styles for flash messages */
+.flash-messages {
+  margin: 20px 0;
+}
+
+.flash {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.flash.success {
+  background-color: #4CAF50; /* Green */
+}
+
+.flash.error {
+  background-color: #f44336; /* Red */
+}
+</style>
+
+</body>
+</html>

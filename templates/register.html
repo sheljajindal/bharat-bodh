@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!---Coding By CoderGirl | www.codinglabweb.com--->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form | CoderGirl</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<div class="header">
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="../static/img/logo.png" alt="Bharat Bodh Logo" class="sitename-logo" />
+</div>
+
+<div class="container">
+  <input type="checkbox" id="check">
+  <div class="login form">
+    <header>Login</header>
+    <form action="/reg_log" method="POST">
+      <input type="text" id='username' name='username' placeholder="Enter your email" required>
+      <input type="password" id='password' name='password' placeholder="Enter your password" required>
+      <a href="#">Forgot password?</a>
+      <!-- Change type="button" to type="submit" -->
+      <input type="submit" name='login' class="button button-71" value="Login">
+    </form>
+    <div class="signup">
+      <span class="signup">Don't have an account?
+        <label for="check">Signup</label>
+      </span>
+    </div>
+  </div>
+  
+  <div class="registration form">
+    <header>Signup</header>
+    <form action="/reg_log" method="POST">
+      <input type="text" id='reg_username' name='reg_username' placeholder="Enter your email" required>
+      <input type="password" id='reg_password' name='reg_password' placeholder="Create a password" required>
+      <input type="password" id='confirm_password' name='confirm_password' placeholder="Confirm your password" required>
+      <!-- Change type="button" to type="submit" -->
+      <input type="submit" name='register' class="button" value="Signup">
+    </form>
+    <div class="signup">
+      <span class="signup">Already have an account?
+        <label for="check">Login</label>
+      </span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

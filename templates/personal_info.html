@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Personal Information</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="../static/css/style1.css">
+
+</head>
+<body>
+
+<div class="header">
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="../static/img/logo.png" alt="Bharat Bodh Logo" class="sitename-logo" />
+</div>
+
+<div class="container">
+
+
+  
+  <!-- Information Section -->
+  
+  <div class="login form">
+    <header>Personal Information Form</header>
+    <form action="/personal_info" method="POST">
+      
+      <!-- First Row -->
+      <div class="row">
+        <div class="column">
+          <label for="title">Title</label>
+          <select id="title" name='title'>
+            <option value="">Select Title</option>
+            <option value="Dr">Dr.</option>
+            <option value="Mr">Mr.</option>
+            <option value="Ms">Ms.</option>
+            <option value="Mrs">Mrs.</option>
+            <option value="Miss">Miss</option>
+          </select>
+        </div>
+        
+        <div class="column">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name='first_name' placeholder="First Name" oninput="this.value = this.value.toUpperCase()"  onkeydown="return /[a-z]/i.test(event.key)" required>
+        </div>
+        
+        <div class="column">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" placeholder="Last Name" oninput="this.value = this.value.toUpperCase()"  onkeydown="return /[a-z]/i.test(event.key)" required>
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="row">
+        <div class="column">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="column">
+          <label>Gender</label>
+          <div class="gender-options">
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+
+        <div class="column">
+          <label for="phone">Phone Number</label>
+          <div class="phone-input">
+            <input type="tel" id="country_code" name='country_code' placeholder="+91" pattern="[+]{1}[0-9]{1,4}" maxlength="4"  oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1');" required>
+            &nbsp; &nbsp; <input type="text" id="phone" name='phone' placeholder="9876543210" pattern="[0-9]{10}" maxlength="10"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Row -->
+      <div class="row">
+        <div class="column">
+          <label for="email">Email</label>
+          <input type="email" id="email" name='email' value="{{ email }}" readonly placeholder="Enter Email" required>
+        </div>
+
+        <div class="column">
+          <label for="confirm_email">Confirm Email</label>
+          <input type="email"  name='confirm_email' id="confirm_email" placeholder="Confirm Email" required>
+        </div>
+
+        <div class="column">
+          <label for="country">Country</label>
+          <select id="country" name='country' required>
+            <option value="">Select Country</option>
+            <option value="India">India</option>
+            <option value="USA">USA</option>
+            <option value="UK">United Kingdom</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Fourth Row - Address -->
+      <div class="row">
+        <div class="column">
+          <label for="address1">Address 1</label>
+          <input type="text" id="address1" name='address1' placeholder="Address Line 1" required>
+        </div>
+
+        <div class="column">
+          <label for="address2">Address 2</label>
+          <input type="text" id="address2" name='address2' placeholder="Address Line 2" required>
+        </div>
+
+        <div class="column">
+          <label for="pincode">Pincode</label>
+          <input type="text" id="pincode" name="pincode" placeholder="Pincode" pattern="[0-9]{6}" maxlength="6"  oninput="this.value = this.value.replace(/[^0-9]/g, '')" required>
+        </div>
+      </div>
+
+      <!-- Fifth Row - Address -->
+      <div class="row">
+        <div class="column">
+          <label for="address1">Institution Name</label>
+          <input type="text" id="institution_name" name="institution_name" placeholder="Institution Name" required>
+        </div>
+
+        <div class="column">
+          <label for="address2">Institution State</label>
+          <input type="text" id="institution_state" name="institution_state" placeholder="Institution State" required>
+        </div>
+
+        <div class="column">
+          <label for="phone">Whatsapp Number</label>
+          <div class="phone-input">
+            <input type="tel" id="whatsapp_country_code" name="whatsapp_country_code" placeholder="+91" pattern="[+]{1}[0-9]{1,4}" maxlength="4"  oninput="this.value = this.value.replace(/[^0-9+]/g, '').replace(/(\..*)\./g, '$1').replace(/^([^+]*\+)[+]+/g, '$1');"  required>
+            &nbsp; &nbsp; <input type="text" id="whatsapp_number" name="whatsapp_number" placeholder="9876543210" pattern="[0-9]{10}" maxlength="10"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button Row -->
+      <div class="button-row ">
+        <button type="submit" class="button-71">Submit</button>
+        <button type="button"  class=" cancel button-71">Cancel</button>
+      </div>
+      
+    </form>
+  </div>
+</div>
+
+</body>
+</html>

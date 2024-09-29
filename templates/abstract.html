@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abstract submission</title>
+  <link rel="stylesheet" href="../static/css/style2.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to dynamically generate co-author input fields
+    function generateCoAuthorFields() {
+      const coAuthorsDiv = document.getElementById("coAuthorsFields");
+      const numberOfCoAuthors = document.getElementById("co_authors").value;
+      coAuthorsDiv.innerHTML = ""; // Clear existing fields
+      
+      // Generate input fields for each co-author
+      for (let i = 1; i <= numberOfCoAuthors; i++) {
+        const coAuthorBlock = document.createElement("div");
+        coAuthorBlock.classList.add("row");
+
+        // Co-author name input
+        const coAuthorName = document.createElement("div");
+        coAuthorName.classList.add("column");
+        coAuthorName.innerHTML = `
+          <label for="co_author_name_${i}">Co-author ${i} Name</label>
+          <input type="text" id="co_author_name_${i}" name="co_author_name_${i}" placeholder="Co-author ${i} Name" required>
+        `;
+        coAuthorBlock.appendChild(coAuthorName);
+
+        // Co-author email input
+        const coAuthorEmail = document.createElement("div");
+        coAuthorEmail.classList.add("column");
+        coAuthorEmail.innerHTML = `
+          <label for="co_author_email_${i}">Co-author ${i} Email</label>
+          <input type="email" id="co_author_email_${i}" name="co_author_email_${i}" placeholder="Co-author ${i} Email" required>
+        `;
+        coAuthorBlock.appendChild(coAuthorEmail);
+
+        // Append the block to the main div
+        coAuthorsDiv.appendChild(coAuthorBlock);
+      }
+    }
+  </script>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="../static/img/logo.png" alt="Bharat Bodh Logo" class="sitename-logo" />
+</div>
+
+<!-- Main Container -->
+<div class="container">
+
+  <!-- Personal Information Form -->
+  <div class="form">
+    <header>Abstract Submission Form</header>
+    
+    <form action="/abstract" method="post">
+      <h3><strong>Abstract Type</strong></h3>
+      <div class="row">
+        <div class="column">
+          <select id="abstract_type" name="abstract_type" required>
+            <option value="">Select abstract type</option>
+            <option value="Individual Paper">Individual Papers</option>
+          </select>
+        </div>
+          </div>
+
+      <h3><strong>Presenting Author Information</strong></h3>
+      <div class="row">
+        <div class="column">
+          <label for="title">Title</label>
+          <select id="title" name="title" required>
+            <option value="">Select Title</option>
+            <option value="Dr">Dr.</option>
+            <option value="Mr">Mr.</option>
+            <option value="Ms">Ms.</option>
+            <option value="Mrs">Mrs.</option>
+            <option value="Miss">Miss</option>
+          </select>
+        </div>
+        <div class="column">
+          <label for="first_name">First Name</label>
+          <input type="text" id="first_name" name="first_name" placeholder="First Name" value='{{first_name}}' readonly required>
+        </div>
+        <div class="column">
+          <label for="last_name">Last Name</label>
+          <input type="text" id="last_name" name="last_name" placeholder="Last Name" value="{{last_name}}" readonly required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Email" value="{{email}}" readonly required>
+        </div>
+        <div class="column">
+          <label for="designation">Designation</label>
+          <select id="designation" name="designation" required>
+            <option value="">Select Designation</option>
+            <option value="Professor">Professor</option>
+            <option value="Associate Professor">Associate Professor</option>
+            <option value="Assistant Professor">Assistant Professor</option>
+            <option value="Research Scholar">Research Scholar</option>
+            <option value="Independent Research Scholar">Independent Research Scholar</option>
+            <option value="Others">Others</option>
+          </select>
+        </div>
+        <div class="column">
+          <label for="phone">Phone Number</label>
+          <div class="phone-input">
+            <input type="tel" id="country_code" name="country_code" value="{{country_code}}" readonly placeholder="+91" required>
+            <input type="text" id="phone" name="phone" placeholder="9876543210" value="{{phone}}" readonly required>
+          </div>
+        </div>
+      </div>
+
+      <h3><strong>Institutional Information</strong></h3>
+      <div class="row">
+        <div class="column">
+          <label for="department">Department</label>
+          <select id="department" name="department" required>
+            <option value="">Select Department</option>
+            <option value="sanskrit">Sanskrit</option>
+            <option value="biotechnology">Biotechnology</option>
+            <option value="computer_science">Computer Science</option>
+          </select>
+        </div>
+        <div class="column">
+          <label for="institute_name">Institute Name</label>
+          <input type="text" id="institute_name" name="institute_name" value="{{institute_name}}" readonly placeholder="Institute Name" required>
+        </div>
+      </div>
+
+      <h3><strong>Number of Co-Authors</strong></h3>
+      <div class="row">
+        <div class="column">
+          <select id="co_authors" name="co_authors" onchange="generateCoAuthorFields()" required>
+            <option value="">Select Number of Co-Authors</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Container for dynamically generated co-author fields -->
+      <div id="coAuthorsFields"></div>
+
+      <h3><strong>Abstract</strong></h3>
+      <div class="row">
+        <div class="column">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select Category</option>
+            <option value="zero">0</option>
+            <option value="one">1</option>
+            <option value="two">2</option>
+            <option value="three">3</option>
+          </select>
+        </div>
+        <div class="column">
+          <label for="language">Language</label>
+          <select id="language" name="language" required>
+            <option value="">Select Language</option>
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="sanskrit">Sanskrit</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label for="mode">Presentation Mode</label>
+          <select id="mode" name="mode" required>
+            <option value="mode">Select mode</option>
+            <option value="oral">Offline</option>
+            <option value="poster">Online</option>
+          </select>
+        </div>
+      </div>
+
+      
+
+      <input type="checkbox" style="width:15px;" name="declaration" required> DECLARATION: The submitting author warrants that they have the rights of all the information and content provided.<br>
+      <input type="checkbox" style="width:15px;" name="mailing_list" required> I accept the inclusion of my email address in the mailing list.
+
+      <div class="row">
+        <div class="column button-row">
+          <button type="submit" class="button-71">SUBMIT NOW!</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+

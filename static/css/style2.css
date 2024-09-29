@@ -1,0 +1,346 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  min-height: 190vh;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fbeee6;
+}
+.container{
+  position: absolute;
+  top: 103%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  max-width: 1200px;
+  width: 100%;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+ .guidelines-container {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .guidelines-container header {
+      font-size: 24px;
+      color: #d9534f;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .guidelines-container ul {
+      padding-left: 20px;
+    }
+
+    .guidelines-container li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .guidelines-container a {
+      color: #d9534f;
+      text-decoration: none;
+    }
+
+    .guidelines-container a:hover {
+      text-decoration: underline;
+    }
+.form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.form header{
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+ .form input{
+   height: 45px;
+   width: 100%;
+   padding: 0 15px;
+   font-size: 17px;
+   margin-bottom: 1.3rem;
+   border: 1px solid #ddd;
+   border-radius: 6px;
+   outline: none;
+ }
+ .form input:focus{
+   box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+ }
+.form a{
+  font-size: 16px;
+  color: #009579;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+.form input.button{
+  color: #fff;
+  background: #009579;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 1.7rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.form input.button:hover{
+  background: #006653;
+}
+.signup{
+  font-size: 17px;
+  text-align: center;
+}
+.signup label{
+  color: #009579;
+  cursor: pointer;
+}
+.signup label:hover{
+  text-decoration: underline;
+}
+
+
+.header {
+  overflow: hidden;
+  background-color: rgba(260, 158, 90, 0.4);
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header .logo img {
+  max-height: 250px;
+  margin-right: 4px;
+}
+
+.sitename-logo {
+   width: 250px; /* Adjust the size as needed */
+   height: auto;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+   .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    .column {
+      flex: 1;
+      margin-right: 15px;
+      padding: 0 10px;
+    }
+    .column:last-child {
+      margin-right: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+.column label {
+      font-size: 16px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .column input[type="text"],
+    .column select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .column input[type="text"]::placeholder {
+      color: #999;
+    }
+
+    /* Flexbox adjustments for small screens */
+    @media (max-width: 768px) {
+      .column {
+        flex: 1 1 100%;
+        padding: 0;
+        margin-bottom: 15px;
+      }
+    }
+    /* Equal width and height for input and select */
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      box-sizing: border-box;
+      height: 42px; /* Set a consistent height */
+    }
+
+    /* Optional: Responsive layout for smaller screens */
+    @media screen and (max-width: 768px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .column {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+
+.button-71 {
+  background-color: floralwhite;
+  border: 0;
+  border-radius: 56px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-71:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-71:hover {
+  box-shadow: rgba(255, 255, 255, .8) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+  color: var(--accent-color);
+}
+
+@media (min-width: 768px) {
+  .button-71 {
+    padding: 16px 48px;
+  }
+}
+
+.gender-options {
+  display: flex;
+  justify-content: space-between;
+  width: 30px; /* Set a specific width for better alignment */
+}
+
+.gender-options label {
+  margin-right: 5px; /* Adjust the margin to give a balanced spacing */
+  margin-left: 15px;
+   /* Make the labels stand out */
+}
+
+.gender-options input {
+  margin-left: 35px; /* Add space between radio buttons and labels */
+}
+
+    .phone-input {
+      display: flex;
+      justify-content: space-between;
+    }
+    .phone-input input[type="tel"] {
+      width: calc(55% - 60px);
+    }
+    .info-section {
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+    .info-section h2 {
+      margin-bottom: 10px;
+    }
+    .info-section p {
+      margin: 5px 0;
+    }
+    .info-section .contact-info {
+      margin-top: 10px;
+    }
+    .button-row {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .button-row button {
+      margin-left: 10px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+    .button-row button.cancel {
+      background-color: #f44336;
+    }
+
