@@ -4,7 +4,6 @@ import MySQLdb.cursors
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
 import os
-from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
@@ -17,8 +16,6 @@ app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'bharat'
 app.config['MYSQL_PASSWORD'] = 'Bodh_12345'
 app.config['MYSQL_DB'] = 'bharatBodh'
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
-db = SQLAlchemy(app)
 
 # Initialize MySQL
 mysql = MySQL(app)
