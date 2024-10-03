@@ -3,8 +3,6 @@ from flask_mysqldb import MySQL
 import MySQLdb.cursors
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
-import os
-
 
 app = Flask(__name__)
 

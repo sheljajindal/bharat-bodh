@@ -66,7 +66,15 @@ document.getElementById("download-btn").addEventListener("click", function (even
         <ul>
           <li><a href="#hero" class="active" style="color: black; font-size: 22px;">Home</a></li>
           <li><a href="#skills" style="color: black; font-size: 22px;">About</a></li>
-          <li><a href="#register" style="color: black; font-size: 22px;">Registration</a></li>
+          <li class="dropdown">
+            <a href="#register" style="color: black; font-size: 22px;">Registration</a>
+            <ul class="dropdown-content">
+                <li><a href="sample.html" style="color: black; font-size: 18px;">Abstract Submission</a></li>
+                <li><a href="register" style="color: black; font-size: 18px;">Full Page Submission</a></li>
+                <li><a href="register" style="color: black; font-size: 18px;">Registration</a></li>
+            </ul>
+          </li>
+         
           <li><a href="#contact" style="color: black; font-size: 22px;">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -197,41 +205,7 @@ document.getElementById("download-btn").addEventListener("click", function (even
       </div>
 
     <!-- registration Action Section -->
-    <section id="register" class="call-to-action section light-background">
-
-      
-
-      <div class="container">
-
-        <div class="row" data-aos="zoom-in" data-aos-delay="100">
-          <div class="col-xl-9 text-center text-xl-start">
-            <!-- Embed PDF Preview -->
-        <h4 class="mt-4">Event Brochure Preview</h4>
-        <div class="pdf-preview">
-          <iframe src="../static/Call for PAPER Bharat Bodh Guwahati.pdf#toolbar=0&navpanes=0&scrollbar=0" 
-                  width="100%" height="400px" style="border:1px solid #ccc;">
-            This browser does not support PDFs. Please download the PDF to view it: 
-            <a href="../static/Call for PAPER Bharat Bodh Guwahati.pdf">Download PDF</a>.
-          </iframe>
-        </div>
-
-        <!-- Add a button to download the full PDF -->
-        <div class="mt-4">
-          <a href="../static/Call for PAPER Bharat Bodh Guwahati.pdf" class="btn btn-primary" download>
-            <i class="bi bi-file-earmark-pdf"></i> Download PDF Brochure
-          </a>
-        </div>
-          </div>
-          
-          <div class="col-xl-3 cta-btn-container text-center">
-            <a class=" button-71" type="submit" href="/reg_log" id='download-btn'>Register</a>
-          </div>
-          
-        </div>
-
-      </div>
-
-    </section><!-- /Registration Action Section -->
+    
 <br>
 <br>
 
@@ -284,12 +258,12 @@ document.getElementById("download-btn").addEventListener("click", function (even
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
+                  <label for="name-field" class="pb-2">Name</label>
                   <input type="text" name="name" id="name-field" class="form-control" required="">
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
+                  <label for="email-field" class="pb-2">Email</label>
                   <input type="email" class="form-control" name="email" id="email-field" required="">
                 </div>
 
